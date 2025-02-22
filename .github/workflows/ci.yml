@@ -22,7 +22,10 @@ jobs:
       # Install dependencies
       - name: Install dependencies
         run: npm install
+      # jest  
+      - name: Fix Jest permissions
+        run: chmod +x node_modules/.bin/jest
       #Run Tests
       - name: Run tests
-        run: npm test
+        run: npx jest
         
