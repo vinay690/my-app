@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('./index');
+const app = require('../src/index');
 
 describe('GET /', () => {
     it('should return Hello, GitHub Actions!', async () => {
