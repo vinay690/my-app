@@ -1,0 +1,28 @@
+name: node js CI
+
+on:
+  push:
+    branches:[master, main, feature]
+  pull_request:
+    branches:[master, main, feature]
+  worklow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      # Install node   
+      - name: Setup NodeJs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+      #Run Tests
+      - name: Run tests
+        run: npm test
+        
